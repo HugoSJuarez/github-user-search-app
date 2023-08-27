@@ -6,7 +6,7 @@ export default function Header(){
     return(
         <header>
             <h1 className="company-name">devFinder</h1>
-            <p className="theme-color">Dark <img className="theme-color__img" src={moon} alt="dark-mode"/></p>
+            <h4 className="theme-color">Dark <img className="theme-color__img" src={moon} alt="dark-mode"/></h4>
         </header>
     );
 }
