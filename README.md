@@ -3,7 +3,7 @@
 Sections:
 
 - [] App
-    - [] Header
+    - [x] Header
     - [] Search Bar 
     - [] Github Info Container
         - [] Github Personal Data
