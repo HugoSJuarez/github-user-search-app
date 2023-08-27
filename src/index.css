@@ -6,4 +6,5 @@ body {
   box-sizing: border-box;
   background-color: var(--bg-color--light);
   font-family: var(--font-family);
+  overflow-y: hidden;
 }
