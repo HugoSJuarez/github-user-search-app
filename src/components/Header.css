@@ -19,6 +19,7 @@ header{
     letter-spacing: 0.15625rem;
     text-transform: uppercase;
 
+    color: var(--body2-color--light);
     display: flex;
     gap: 16px;
     align-items: center;
