@@ -1,5 +1,9 @@
+@import url("./variables.css");
+
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  background-color: var(--bg-color--light);
+  font-family: var(--font-family);
 }
