@@ -5,14 +5,14 @@ import Socials from "../components/Socials";
 import './InfoContainer.css';
 
 
-function InfoContainer(){
+function InfoContainer({user}){
     return(
         <section className="user-info-container">
-            <img className="user-info-container__img" src="" alt="User profile"/>
+            <img className="user-info-container__img" src={user.data.avatar_url} alt="User profile"/>
             <div className="user-info-container__text">
-                <PersonalData />
-                <RepoData />
-                <Socials />
+                <PersonalData user={user}/>
+                <RepoData user={user}/>
+                <Socials user={user} />
             </div>
         </section>
     );

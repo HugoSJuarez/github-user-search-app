@@ -14,11 +14,11 @@ const initUser = await octokit.request('GET /users/{username}', {
         'X-GitHub-Api-Version': '2022-11-28'
     }
 });
+console.log("Run init now");
 
 function UpdateSearch(){
     const [user, setUser] = useState(initUser);
-    console.log("user", user);
-    
+    console.log(user);
     async function handleSearch(value){
         const newUser = await octokit.request('GET /users/{username}', {
             username: value,
