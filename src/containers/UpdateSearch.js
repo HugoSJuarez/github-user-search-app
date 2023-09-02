@@ -18,8 +18,11 @@ console.log("Run init now");
 
 function UpdateSearch(){
     const [user, setUser] = useState(initUser);
+    const [isSearching, setIsSearching] = useState(false);
     console.log(user);
     async function handleSearch(value){
+
+        setIsSearching(true);
         const newUser = await octokit.request('GET /users/{username}', {
             username: value,
             headers: {
@@ -27,11 +30,12 @@ function UpdateSearch(){
             }
         });
         setUser(newUser);
+        setIsSearching(false);
     }
 
     return(
         <>
-            <SearchBar onSearch={handleSearch}/>
+            <SearchBar isSearching={isSearching} onSearch={handleSearch}/>
             <InfoContainer user={user}/>
         </>
     );
