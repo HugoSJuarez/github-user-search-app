@@ -4,7 +4,7 @@ Sections:
 
 - [] App
     - [x] Header
-    - [] Search Bar 
+    - [x] Search Bar 
     - [] Github Info Container
         - [] Github Personal Data
         - [] Repo Data
