@@ -2,6 +2,7 @@ import React from "react";
 import { Octokit } from "octokit";
 import PersonalData from "../components/PersonalData";
 import RepoData from "../components/RepoData";
+import Socials from "../components/Socials";
 import './InfoContainer.css';
 
 const octokit = new Octokit({
@@ -24,6 +25,7 @@ function InfoContainer(){
             <div className="user-info-container__text">
                 <PersonalData />
                 <RepoData />
+                <Socials />
             </div>
         </section>
     );

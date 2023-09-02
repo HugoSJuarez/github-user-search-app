@@ -1,0 +1,22 @@
+.socials-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 60px;
+    row-gap: 19px;
+}
+
+.social-container__links{
+    width: 100%;
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+}
+
+.social-container__links.not-available{
+    opacity: 0.5;
+}
+
+.social-container__links a{
+    color: inherit;
+    text-decoration: none;
+}
