@@ -6,28 +6,38 @@ import websiteIcon from "../assets/icon-website.svg";
 import "./Socials.css";
 
 
-function Socials(){
+function Socials({user}){
+    
+    const location = user.data.location;
+    const twitter = user.data.twitter_username;
+    const website = user.data.blog;
+    const org = user.data.company;
 
     return(
         <div className="socials-container body1">
-            <div className="social-container__links">
+            <div className={"social-container__links"+ (location ? '' : " not-available")}>
                 <img src={locationIcon} alt="Location Icon"/>
-                <p>San Francisco</p>
+                <p>{location ? location : "Not Available"}</p>
             </div>
 
-            <div className="social-container__links not-available">
+            <div className={"social-container__links" + (twitter ? '' : " not-available")}>
                 <img src={twitterIcon} alt="Twitter Icon"/>
-                <p>Not Available</p>
+                <p>{twitter ? twitter : "Not Available"}</p>
             </div>
 
-            <div className="social-container__links">
+            <div className={"social-container__links"+ (website ? '' : " not-available")}>
                 <img src={websiteIcon} alt="Website Icon"/>
-                <p><a href="#">https://github.blog</a></p>
+                <p>{website ?
+                        <a href={website}>{website}</a>
+                    :
+                    "Not Available"
+                    }
+                </p>
             </div>
 
-            <div className="social-container__links">
+            <div className={"social-container__links" + (org ? '' : " not-available")}>
                 <img src={companyIcon} alt="Company Icon"/>
-                <p>@github</p>
+                <p>{org ? org : "Not Available"}</p>
             </div>
         </div>
     );
