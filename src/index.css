@@ -48,3 +48,11 @@ input{
   font-size: 1.125rem;
   line-height: 1.5625rem;
 }
+
+.body1{
+  color: var(--body1-color--light);
+}
+
+.body2{
+  color: var(--body2-color--light);
+}

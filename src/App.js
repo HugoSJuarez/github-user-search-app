@@ -1,5 +1,4 @@
 import React from "react";
-import { Octokit } from "octokit";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import InfoContainer from "./containers/InfoContainer";

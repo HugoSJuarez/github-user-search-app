@@ -4,11 +4,11 @@ import "./SearchBar.css"
 
 export default function SearchBar() {
     return(
-        <div className="search-box">
+        <section className="search-box">
             <img className="search-box__icon" src={searchIcon} alt="search icon"/>
             <input className="search-box__input" type="text" placeholder="Search Github username..."/>
             <p className="search-box__error--found">No results</p>
             <button className="search-box__btn">Search</button>
-        </div>
+        </section>
     );
 }
