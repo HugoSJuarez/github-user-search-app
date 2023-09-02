@@ -18,24 +18,48 @@ console.log("Run init now");
 
 function UpdateSearch(){
     const [user, setUser] = useState(initUser);
-    const [isSearching, setIsSearching] = useState(false);
-    console.log(user);
+    const [state, setState] = useState("found");
+    console.log("User", user);
+    let isSearching = false;
+    let error = false;
+
     async function handleSearch(value){
 
-        setIsSearching(true);
-        const newUser = await octokit.request('GET /users/{username}', {
-            username: value,
-            headers: {
-                'X-GitHub-Api-Version': '2022-11-28'
-            }
-        });
-        setUser(newUser);
-        setIsSearching(false);
+        setState("searching");
+        try{
+            const newUser = await octokit.request('GET /users/{username}', {
+                username: value,
+                headers: {
+                    'X-GitHub-Api-Version': '2022-11-28'
+                }
+            });
+            setUser(newUser);
+            setState("found");
+        }
+        catch(e){
+            setState("error");
+        }
+    }
+
+    switch(state){
+        case "searching":
+            isSearching=true;
+            error = false;
+            break;
+        case "found":
+            isSearching=false;
+            break;
+        case "error":
+            isSearching=false;
+            error=true;
+            break;
+        default:
+            throw new Error("This shouldnt happen");
     }
 
     return(
         <>
-            <SearchBar isSearching={isSearching} onSearch={handleSearch}/>
+            <SearchBar isSearching={isSearching} onSearch={handleSearch} error={error}/>
             <InfoContainer user={user}/>
         </>
     );

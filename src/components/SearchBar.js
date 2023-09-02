@@ -3,7 +3,7 @@ import { useState } from "react";
 import searchIcon from "../assets/icon-search.svg";
 import "./SearchBar.css";
 
-export default function SearchBar({ onSearch, isSearching }) {
+export default function SearchBar({ onSearch, isSearching, error }) {
   const [text, setText] = useState("");
 
   function handleChange(e) {
@@ -20,7 +20,7 @@ export default function SearchBar({ onSearch, isSearching }) {
         type="text"
         placeholder="Search Github username..."
       />
-      <p className="search-box__error--found">No results</p>
+      <p className={"search-box__error--" + (error ? "not-found" : "found")}>No results</p>
       <button
         onClick={() => {
           onSearch(text);
