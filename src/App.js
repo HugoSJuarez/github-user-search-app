@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import InfoContainer from "./containers/InfoContainer";
+import UpdateSearch from "./containers/UpdateSearch";
 import "./App.css"
 
 function App() {  
@@ -9,8 +8,7 @@ function App() {
     <div className="app-container">
       <Header />
       <main>
-        <SearchBar />
-        <InfoContainer />
+        <UpdateSearch />
       </main>
     </div>
   );
