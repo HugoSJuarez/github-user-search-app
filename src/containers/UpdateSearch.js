@@ -17,10 +17,22 @@ const initUser = await octokit.request('GET /users/{username}', {
 
 function UpdateSearch(){
     const [user, setUser] = useState(initUser);
+    console.log("user", user);
+    
+    async function handleSearch(value){
+        const newUser = await octokit.request('GET /users/{username}', {
+            username: value,
+            headers: {
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        });
+        setUser(newUser);
+    }
+
     return(
         <>
-            <SearchBar />
-            <InfoContainer />
+            <SearchBar onSearch={handleSearch}/>
+            <InfoContainer user={user}/>
         </>
     );
 }

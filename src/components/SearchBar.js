@@ -1,14 +1,34 @@
 import React from "react";
-import searchIcon from "../assets/icon-search.svg"
-import "./SearchBar.css"
+import { useState } from "react";
+import searchIcon from "../assets/icon-search.svg";
+import "./SearchBar.css";
 
-export default function SearchBar() {
-    return(
-        <section className="search-box">
-            <img className="search-box__icon" src={searchIcon} alt="search icon"/>
-            <input className="search-box__input" type="text" placeholder="Search Github username..."/>
-            <p className="search-box__error--found">No results</p>
-            <button className="search-box__btn">Search</button>
-        </section>
-    );
+export default function SearchBar({ onSearch }) {
+  const [text, setText] = useState("");
+
+  function handleChange(e) {
+    setText(e.target.value);
+  }
+
+  return (
+    <section className="search-box">
+      <img className="search-box__icon" src={searchIcon} alt="search icon" />
+      <input
+        value={text}
+        onChange={handleChange}
+        className="search-box__input"
+        type="text"
+        placeholder="Search Github username..."
+      />
+      <p className="search-box__error--found">No results</p>
+      <button
+        onClick={() => {
+          onSearch(text);
+        }}
+        className="search-box__btn"
+      >
+        Search
+      </button>
+    </section>
+  );
 }
