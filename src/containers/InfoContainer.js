@@ -1,9 +1,10 @@
 import React from "react";
+import './InfoContainer.css';
 
 function InfoContainer(){
     return(
-        <div>
-            
+        <div className="user-info-container">
+
         </div>
     );
 

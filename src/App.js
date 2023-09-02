@@ -1,7 +1,8 @@
 import React from "react";
 import { Octokit } from "octokit";
 import Header from "./components/Header";
-import SearchBar from "./components/SearchBar"
+import SearchBar from "./components/SearchBar";
+import InfoContainer from "./containers/InfoContainer";
 import "./App.css"
 
 // const octokit = new Octokit({
@@ -21,6 +22,7 @@ function App() {
       <Header />
       <main>
         <SearchBar />
+        <InfoContainer />
       </main>
     </div>
   );
