@@ -1,6 +1,7 @@
 import React from "react";
 import { Octokit } from "octokit";
 import PersonalData from "../components/PersonalData";
+import RepoData from "../components/RepoData";
 import './InfoContainer.css';
 
 const octokit = new Octokit({
@@ -22,6 +23,7 @@ function InfoContainer(){
             <img className="user-info-container__img" src={user.data.avatar_url} alt="User profile"/>
             <div className="user-info-container__text">
                 <PersonalData />
+                <RepoData />
             </div>
         </section>
     );
