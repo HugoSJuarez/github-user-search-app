@@ -1,7 +1,7 @@
 import React from "react";
 import "./RepoData.css"
 
-function RepoData(){
+function RepoData({user}){
     return(
         <div className="repo-info-container">
             <div className="repo-infor-container__data">
@@ -9,7 +9,7 @@ function RepoData(){
                     Repos
                 </p>
                 <h2 className="number">
-                    8
+                    {user.data.public_repos}
                 </h2>
             </div>
 
@@ -18,7 +18,7 @@ function RepoData(){
                     Followers
                 </p>
                 <h2 className="number">
-                    3938
+                    {user.data.followers}
                 </h2>
             </div>
 
@@ -27,7 +27,7 @@ function RepoData(){
                     Following
                 </p>
                 <h2 className="number">
-                    9
+                    {user.data.following}
                 </h2>
             </div>
         </div>
