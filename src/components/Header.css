@@ -17,13 +17,21 @@ header{
     text-transform: uppercase;
 
     color: var(--body2-color--light);
+    fill: var(--body2-color--light);
     display: flex;
     gap: 16px;
     align-items: center;
 
 }
 
+.theme-color:hover{
+    color: #222731;
+    fill: #222731;
+    cursor: pointer;
+}
+
 .theme-color__img{
     width: 1.25rem;
     aspect-ratio: 1/1;
+    
 }

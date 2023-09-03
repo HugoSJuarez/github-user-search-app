@@ -21,6 +21,11 @@
     text-decoration: none;
 }
 
+.social-container__links:hover a{
+    color: inherit;
+    text-decoration: underline;
+}
+
 .social-container__links.not-available a {
     cursor: not-allowed;
 }
