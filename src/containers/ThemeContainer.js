@@ -3,23 +3,23 @@ import { createContext, useState, useContext} from "react";
 export const ThemeContext = createContext(null);
 export const ThemeSetContext = createContext(null);
 
-export function ThemeProvider({children}){
+export function ThemeProvider( { children }){
     const [theme, setTheme] = useState("dark");
+
 
     return(
         <ThemeContext.Provider value={theme}>
-            <ThemeSetContext value={setTheme}>
+            <ThemeSetContext.Provider value={setTheme}>
                 {children}
-            </ThemeSetContext>
+            </ThemeSetContext.Provider>
         </ThemeContext.Provider>
     );
-
 }
 
-export function useTasks() {
+export function useTheme() {
     return useContext(ThemeContext);
 }
   
-export function useTasksDispatch() {
+export function useSetTheme() {
     return useContext(ThemeSetContext);
 }
